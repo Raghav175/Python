@@ -42,11 +42,11 @@ These operations modify the list in place.
 
 ## **Utility Operations**
 Common utility operations include:
-- Determining the number of elements
-- Creating shallow copies
-- Clearing all elements
-- Finding the index of a value
-- Counting occurrences of an element
+- Determining the number of elements using `.len()`
+- Creating shallow copies using `.copy()`
+- Clearing all elements using `.clear()`
+- Finding the index of a value using `.index()`
+- Counting occurrences of an element `.count()`
 
 Understanding shallow copies versus shared references is critical when working with lists.
 
@@ -54,8 +54,8 @@ Understanding shallow copies versus shared references is critical when working w
 
 ## **Sorting and Reordering**
 Lists can be reordered by:
-- Sorting elements in ascending or descending order
-- Reversing the existing order
+- Sorting elements in ascending or descending order using `.sort()`
+- Reversing the existing order using `.reverse()`
 
 Some operations modify the list in place, while others return a new list. This distinction is important to avoid unintended side effects.
 
@@ -88,5 +88,5 @@ Lists are ideal when:
 ---
 
 ## **Files in This Folder**
-This folder contains Python files demonstrating list behavior, common operations,
-and typical usage patterns.
+This folder contains Python files demonstrating list behaviour, common operations,
+and typical usage patterns to solve problems.
