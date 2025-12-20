@@ -8,20 +8,20 @@
 
 <h2>📘 Overview</h2>
 
-<p>
+<li>
 A <b>string</b> is an ordered, immutable sequence of characters in Python, enclosed within
 single (<code>' '</code>) or double (<code>" "</code>) quotes.
-</p>
+</li>
 
-<p>
+<li>
 Strings are a core data type and are extensively used in text processing, data cleaning,
 feature engineering, and input/output operations.
-</p>
+</li>
 
-<p>
+<li>
 Once created, a string cannot be modified in place. Any operation that appears to change a
 string actually creates a <b>new string object in memory</b>.
-</p>
+</li>
 
 ---
 
