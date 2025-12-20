@@ -14,8 +14,8 @@ single (<code>' '</code>) or double (<code>" "</code>) quotes.
 </li>
 
 <li>
-Strings are a core data type and are extensively used in text processing, data cleaning,
-feature engineering, and input/output operations.
+Strings are a core data type and are extensively used in text processing, data cleaning, Natural Language Processing(NLP)
+Feature engineering, and input/output operations.
 </li>
 
 <li>
