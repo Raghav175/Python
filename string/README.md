@@ -59,21 +59,6 @@ string actually creates a <b>new string object in memory</b>.
 
 ---
 
-<h2>🔍 Accessing Characters</h2>
-
-<ul>
-  <li>Index-based access</li>
-  <li>Negative indexing</li>
-  <li>Slicing to extract substrings</li>
-  <li>Step-based slicing (skipping characters)</li>
-</ul>
-
-<p>
-<b>Important:</b> Slicing always returns a new string and never modifies the original.
-</p>
-
----
-
 <h2>🧱 Immutability Explained</h2>
 
 <p>Strings do <b>not</b> support:</p>
@@ -87,6 +72,22 @@ string actually creates a <b>new string object in memory</b>.
 Operations such as concatenation or replacement create a <b>new string object</b>.
 This design improves memory safety and enables internal optimizations in Python.
 </p>
+
+---
+
+<h2>🔍 Accessing Characters</h2>
+
+<ul>
+  <li>Index-based access</li>
+  <li>Negative indexing</li>
+  <li>Slicing to extract substrings</li>
+  <li>Step-based slicing (skipping characters)</li>
+</ul>
+
+<p>
+<b>Important:</b> Slicing always returns a new string and never modifies the original.
+</p>
+
 
 ---
 
