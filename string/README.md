@@ -33,16 +33,19 @@ string actually creates a <b>new string object in memory</b>.
     <th align="left">Description</th>
   </tr>
   <tr>
-    <td>Order</td>
-    <td>Characters maintain insertion order</td>
-  </tr>
+    <td>Creation</td>
+    <td>Single or double quotes</td>
+  <tr>
   <tr>
     <td>Mutability</td>
     <td><b>Immutable</b> (existing memory cannot be changed)</td>
   </tr>
   <tr>
+    <td>Order</td>
+    <td>Characters maintain insertion order</td>
+  </tr>
     <td>Indexing</td>
-    <td>Supports zero-based and negative indexing</td>
+    <td>Supports zero-based and reverse indexing(negative)</td>
   </tr>
   <tr>
     <td>Slicing</td>
@@ -51,10 +54,6 @@ string actually creates a <b>new string object in memory</b>.
   <tr>
     <td>Duplicates</td>
     <td>Allowed</td>
-  </tr>
-  <tr>
-    <td>Creation</td>
-    <td>Single or double quotes</td>
   </tr>
 </table>
 
