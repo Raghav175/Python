@@ -10,7 +10,7 @@
 
 <li>
 A <b>list</b> is an ordered, mutable collection of elements in Python, created using square
-brackets (<code>[ ]</code>).
+brackets (<code>[ ]</code>) or the <code>list()</code> constructor.
 </li>
 
 <li>
@@ -19,8 +19,8 @@ algorithm design, and general-purpose programming.
 </li>
 
 <li>
-Unlike strings, lists are <b>mutable</b>. Their contents can be modified in place without
-creating a new object in memory.
+Unlike strings and tuples, lists are <b>mutable</b>. Their contents can be modified in place
+without creating a new object in memory.
 </li>
 
 ---
@@ -101,26 +101,66 @@ the original list.
 
 ---
 
-<h2>🛠 Common List Operations</h2>
+<h2>🧠 List Operations by Memory Behavior</h2>
+
+<h3>➕ Adding Elements (Expands Existing Memory)</h3>
 
 <pre>
 append()
 extend()
 insert()
-remove()
-pop()
-clear()
-copy()
 </pre>
 
 <p>
-Most list methods modify the list <b>in place</b> and return <code>None</code>.
-This is a deliberate design choice in Python.
+These operations modify the list <b>in place</b> and increase its size.
+They return <code>None</code>.
 </p>
 
 ---
 
-<h2>🔁 Ordering & Rearranging</h2>
+<h3>➖ Removing Elements (Shrinks Existing Memory)</h3>
+
+<pre>
+remove()
+pop()
+del
+</pre>
+
+<p>
+These operations remove elements from the same list object.
+<code>pop()</code> returns the removed element.
+</p>
+
+---
+
+<h3>🧹 Clearing Elements (Contents Removed, Object Retained)</h3>
+
+<pre>
+clear()
+</pre>
+
+<p>
+Removes all elements from the list while preserving the list object and its references.
+</p>
+
+---
+
+<h3>📄 Copying Lists (New Memory Allocation)</h3>
+
+<pre>
+copy()
+list()
+[:]
+</pre>
+
+<p>
+Creates a <b>new list object</b>. This is a <b>shallow copy</b>;
+nested objects are still shared.
+</p>
+
+---
+
+<h3>🔁 Reordering Elements (Memory Stable, Order Changes)</h3>
 
 <pre>
 sort()
@@ -130,23 +170,22 @@ sorted()
 
 <p>
 <code>sort()</code> and <code>reverse()</code> mutate the list in place.
-<code>sorted()</code> returns a new list and leaves the original unchanged.
+<code>sorted()</code> returns a new list.
 </p>
 
 ---
 
-<h2>✅ Membership & Searching</h2>
+<h3>🚫 Non-Mutating Operations (Read-Only)</h3>
 
 <pre>
-in
-not in
-index()
+len()
 count()
+index()
+in / not in
 </pre>
 
 <p>
-Membership checks on lists are linear-time operations.
-For large datasets, consider using a <b>set</b> instead.
+These operations inspect the list without modifying it.
 </p>
 
 ---
@@ -167,10 +206,10 @@ For large datasets, consider using a <b>set</b> instead.
 
 <ul>
   <li>When order matters</li>
-  <li>When duplicates are required</li>
-  <li>When frequent insertions or deletions are needed</li>
-  <li>When data needs to be modified in place</li>
-  <li>When readability and flexibility matter more than raw performance</li>
+  <li>When duplicate values are required</li>
+  <li>When frequent insertions or deletions are expected</li>
+  <li>When in-place modification is desired</li>
+  <li>When flexibility and readability matter more than raw performance</li>
 </ul>
 
 ---
