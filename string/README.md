@@ -14,8 +14,8 @@ single (<code>' '</code>) or double (<code>" "</code>) quotes.
 </li>
 
 <li>
-Strings are a core data type and are extensively used in text processing, data cleaning, Natural Language Processing(NLP)
-Feature engineering, and input/output operations.
+Strings are a core data type and are extensively used in text processing, data cleaning,
+Natural Language Processing (NLP), feature engineering, and input/output operations.
 </li>
 
 <li>
@@ -35,7 +35,7 @@ string actually creates a <b>new string object in memory</b>.
   <tr>
     <td>Creation</td>
     <td>Single or double quotes</td>
-  <tr>
+  </tr>
   <tr>
     <td>Mutability</td>
     <td><b>Immutable</b> (existing memory cannot be changed)</td>
@@ -44,8 +44,9 @@ string actually creates a <b>new string object in memory</b>.
     <td>Order</td>
     <td>Characters maintain insertion order</td>
   </tr>
+  <tr>
     <td>Indexing</td>
-    <td>Supports zero-based and reverse indexing(negative)</td>
+    <td>Supports zero-based and negative indexing</td>
   </tr>
   <tr>
     <td>Slicing</td>
@@ -88,6 +89,80 @@ This design improves memory safety and enables internal optimizations in Python.
 <b>Important:</b> Slicing always returns a new string and never modifies the original.
 </p>
 
+---
+
+<h2>🔁 Iterating Over Strings</h2>
+
+<p>
+Strings are iterable, meaning each character can be accessed sequentially using loops.
+Iteration never modifies the original string.
+</p>
+
+---
+
+<h3>🔂 Using <code>for</code> Loop with Strings</h3>
+
+<pre>
+word = "python"
+
+for ch in word:
+    print(ch)
+</pre>
+
+<p>
+The <code>for</code> loop iterates character-by-character in insertion order.
+This is the most common and safest way to process strings.
+</p>
+
+---
+
+<h4>Accessing Index Along with Character</h4>
+
+<pre>
+word = "python"
+
+for i, ch in enumerate(word):
+    print(i, ch)
+</pre>
+
+<p>
+Useful when both position and value are required (e.g., validation, transformations).
+</p>
+
+---
+
+<h3>🔄 Using <code>while</code> Loop with Strings</h3>
+
+<pre>
+word = "python"
+i = 0
+
+while i < len(word):
+    print(word[i])
+    i += 1
+</pre>
+
+<p>
+The <code>while</code> loop provides manual control over indexing.
+It is more error-prone but useful for conditional traversal.
+</p>
+
+---
+
+<h4>Reverse Traversal Using <code>while</code></h4>
+
+<pre>
+word = "python"
+i = len(word) - 1
+
+while i >= 0:
+    print(word[i])
+    i -= 1
+</pre>
+
+<p>
+Demonstrates reverse indexing without slicing.
+</p>
 
 ---
 
@@ -144,11 +219,11 @@ Used in encoding, decoding, and low-level string manipulation.
 <h2>⚠️ Common Pitfalls</h2>
 
 <ul>
-  <li>Assuming strings can be modified in place</li>
-  <li>Expecting <code>.replace()</code> to change the original string</li>
-  <li>Forgetting slicing creates a new object</li>
-  <li>Overusing concatenation inside loops</li>
-  <li>Confusing string methods with list methods</li>
+  <li>Assuming strings can be modified inside loops</li>
+  <li>Using <code>+=</code> concatenation repeatedly inside loops</li>
+  <li>Infinite <code>while</code> loops due to missing index updates</li>
+  <li>Expecting <code>.replace()</code> to mutate the original string</li>
+  <li>Confusing string iteration with list mutation</li>
 </ul>
 
 ---
@@ -173,15 +248,14 @@ This folder contains Python files and notebooks demonstrating:
 
 <ul>
   <li>String creation and indexing</li>
-  <li>Slicing and skipping patterns</li>
+  <li>Loop-based traversal patterns</li>
+  <li>Slicing and skipping techniques</li>
   <li>Built-in string methods</li>
   <li>Membership and validation checks</li>
-  <li>Practical manipulation examples</li>
 </ul>
 
 <hr/>
 
 <p align="center">
-  <i>Clarity over cleverness. Immutability over surprises.</i>
+  <i>Strings don’t change. Your logic must.</i>
 </p>
-
