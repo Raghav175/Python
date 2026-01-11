@@ -101,6 +101,72 @@ the original list.
 
 ---
 
+<h2>🔁 Iterating Over Lists (for & while Loops)</h2>
+
+<p>
+Iteration is the most common way to process list elements. Python provides two primary looping
+constructs: <code>for</code> and <code>while</code>.
+</p>
+
+<h3>▶️ Using the <code>for</code> Loop</h3>
+
+<p>
+The <code>for</code> loop is the most Pythonic and safest way to traverse a list. It iterates
+directly over elements and avoids manual index handling.
+</p>
+
+<pre>
+nums = [10, 20, 30, 40]
+for x in nums:
+    print(x)
+</pre>
+
+<p>
+To access both index and value, use <code>enumerate()</code>:
+</p>
+
+<pre>
+for i, x in enumerate(nums):
+    print(i, x)
+</pre>
+
+<h3>🔄 Using the <code>while</code> Loop</h3>
+
+<p>
+The <code>while</code> loop gives full control over indexing and is useful when iteration
+depends on conditions or pointer-style traversal.
+</p>
+
+<pre>
+i = 0
+while i < len(nums):
+    print(nums[i])
+    i += 1
+</pre>
+
+<p>
+Manual index updates are required. A missing increment can cause infinite loops.
+</p>
+
+<h3>⚠️ Modifying Lists During Iteration</h3>
+
+<p>
+Changing a list while iterating over it can break index consistency. Always iterate over a copy
+when deletion is required.
+</p>
+
+<pre>
+for x in nums[:]:
+    if x % 20 == 0:
+        nums.remove(x)
+</pre>
+
+<p>
+This prevents structural mutation of the active iterator.
+</p>
+
+---
+
 <h2>🧠 List Operations by Memory Behavior</h2>
 
 <h3>➕ Adding Elements (Expands Existing Memory)</h3>
