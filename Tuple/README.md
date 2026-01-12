@@ -188,6 +188,76 @@ Useful for variable-length data and flexible assignments.
 
 ---
 
+<h2>🔁 Iterating Over Tuples (for & while Loops)</h2>
+
+<p>
+Since tuples are ordered collections, they support sequential traversal using
+<code>for</code> and <code>while</code> loops. Because tuples are immutable, iteration is always
+<b>read-only</b> — no structural modification is possible.
+</p>
+
+<h3>▶️ Using the <code>for</code> Loop</h3>
+
+<p>
+The <code>for</code> loop is the most natural way to iterate over a tuple. It works directly
+with elements and does not require index handling.
+</p>
+
+<pre>
+t = (10, 20, 30, 40)
+for x in t:
+    print(x)
+</pre>
+
+<p>
+To access both index and value, use <code>enumerate()</code>:
+</p>
+
+<pre>
+for i, x in enumerate(t):
+    print(i, x)
+</pre>
+
+<p>
+Iteration uses the iterator protocol, making tuple traversal fast and memory-efficient.
+</p>
+
+<h3>🔄 Using the <code>while</code> Loop</h3>
+
+<p>
+The <code>while</code> loop iterates using index positions. This is useful when index-based
+logic or pointer-style movement is required.
+</p>
+
+<pre>
+i = 0
+while i < len(t):
+    print(t[i])
+    i += 1
+</pre>
+
+<p>
+Since tuples cannot change size, the loop boundary remains stable, eliminating
+mutation-related bugs common with lists.
+</p>
+
+<h3>⚠️ Immutability During Iteration</h3>
+
+<p>
+Tuple elements cannot be reassigned during iteration:
+</p>
+
+<pre>
+for x in t:
+    x = x * 2   # does NOT modify the tuple
+</pre>
+
+<p>
+This only rebinds the local variable <code>x</code>. The original tuple remains unchanged.
+To transform values, a new tuple must be created.
+</p>
+---
+
 <h2>⚠️ Common Pitfalls</h2>
 
 <ul>
