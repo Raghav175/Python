@@ -96,6 +96,63 @@ Use <code>.get()</code> when safety matters.
 
 ---
 
+<div class="card">
+    <h2>For Loop with Dictionary (Pythonic & Preferred)</h2>
+    <p>
+        The <code>for</code> loop iterates directly over dictionary views without creating
+        intermediate lists. This is memory-efficient and the industry standard way.
+    </p>
+    <pre>
+student = {"name": "Raghav", "age": 25, "course": "Data Science"}
+
+## Iterate over keys (default)
+for key in student:
+    print(key)
+
+## Iterate over values
+for value in student.values():
+    print(value)
+
+## Iterate over key-value pairs
+for key, value in student.items():
+    print(f"{key} -> {value}")
+    </pre>
+</div>
+
+<div class="card">
+    <h2>While Loop with Dictionary (Index-Controlled Traversal)</h2>
+    <p>
+        Dictionaries are not index-based. To use <code>while</code>, keys must first be
+        materialized into a list. This approach is used only when manual index or
+        condition control is required.
+    </p>
+    <pre>
+student = {"name": "Raghav", "age": 25, "course": "Data Science"}
+
+keys = list(student.keys())
+i = 0
+
+while i < len(keys):
+    key = keys[i]
+    value = student[key]
+    print(f"{key} -> {value}")
+    i += 1
+    </pre>
+</div>
+
+<div class="card">
+    <h2>For vs While (Engineering View)</h2>
+    <ul>
+        <li><b>for</b> loop → Cleaner, safer, iterator-based, used in real codebases</li>
+        <li><b>while</b> loop → Only when step-wise control, break conditions, or pointer logic is needed</li>
+    </ul>
+</div>
+
+</body>
+</html>
+
+----
+
 <h2>🛠 Common Dictionary Methods</h2>
 
 <pre>
